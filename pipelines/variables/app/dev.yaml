@@ -1,25 +1,25 @@
 variables:
   # Azure service connection and environment details.
-  AzureServiceConnection: []
-  AZURE_RM_SVC_CONNECTION: []
+  AzureServiceConnection: azure-sc
+  AZURE_RM_SVC_CONNECTION: azure-sc
   EnvironmentToDeploy: dev
 
-  SubscriptionId: []
-  ResourceGroupName: []
-  ResourceGroupLocation: []
-  FunctionAppName: []
-  KeyVaultName: []
-  AppInsightsName: []
-  searchserviceendpoint: https://[].search.windows.net/
+  SubscriptionId: 5a20ed48-1f23-4e2e-b9c5-02733c03a911
+  ResourceGroupName: ie-ai-index-scraper2-southcentral-rg
+  ResourceGroupLocation: southcentralus
+  FunctionAppName: southcentralus
+  KeyVaultName: ieaiscrapertchckvns
+  AppInsightsName: ieaiscraperdevgrpain
+  searchserviceendpoint: https://fulcrum-competitors-ai-search.search.windows.net
 
-  DockerImageRepository: []
+  DockerImageRepository: repo1
   DockerFilePath: ./azure_functions/Dockerfile
-  ContainerRegistryName: []
-  LandingAreaName: []
-  MLWorkspaceName: []
+  ContainerRegistryName: ieaiscraper
+  LandingAreaName: ieaiscrapertchconstor
+  MLWorkspaceName: ieaiscrapertchconstor
 
 
-  CrawlerConfigurationStorageAccountUrl: https://[].blob.core.windows.net/
+  CrawlerConfigurationStorageAccountUrl: https://ieaiscrapertchconstor.blob.core.windows.net/
   CrawlerConfigurationContainerName: mainconfig
   CrawlerConfigName: crawlers.yaml
   PriorityCrawlerConfigName: priority.yaml

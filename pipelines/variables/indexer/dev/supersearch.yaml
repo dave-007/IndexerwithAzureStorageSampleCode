@@ -1,14 +1,14 @@
 variables:
   # Azure Search and OpenAI details for indexer deployment.
   StorageAccountName: storageaccount
-  StorageAccountUrl: https://[].blob.core.windows.net/
+  StorageAccountUrl: https://ieaiscrapertchconstor.blob.core.windows.net/
   ContainerName: container
-  AzureOpenAiEndpoint: https://[].openai.azure.com/
+  AzureOpenAiEndpoint: https://ieaiscraperopenaiservice.openai.azure.com/
   AzureOpenAiEmbeddingDeploymentName: text-embedding-ada-002
   AzureOpenAiModelName: text-embedding-ada-002
-  SearchEndpoint: https://[].search.windows.net/
+  SearchEndpoint: https://fulcrum-competitors-ai-search.search.windows.net
   IndexName: index
-  TestQuery: "What is best phone for gaming?"
+  TestQuery: "What are the competitors of PolyPhaser?"
   IndexerInterval: "PT30M"  
   IndexerStartTime: "2025-02-11T00:15:00Z"
   

@@ -1,7 +1,7 @@
 crawler:
   documents:
     storage:
-      account: https://[].blob.core.windows.net/
+      account: https://ieaiscrapertchconstor.blob.core.windows.net/
       container: container
     urls:
       - https://www.google.de/
@@ -30,5 +30,5 @@ crawler:
         - "#divFooter"
   logs:
     storage:
-      account: https://[].blob.core.windows.net/
+      account: https://ieaiscrapertchconstor.blob.core.windows.net/
       container: containerlogs

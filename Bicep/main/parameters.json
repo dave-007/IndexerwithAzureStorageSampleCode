@@ -1,28 +1,27 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
     "rgname": {
-    "value": "Techconnect"
+      "value": "ie-ai-index-scraper2-southcentral-rg"
     },
     "PrivateEndpointSubnetName": {
-    "value": "DevProductionSubnet" 
+      "value": "Devsubnet"
     },
     "PrivateEndpointId": {
-    "value": "DevProductionSubnet"
+      "value": "Devsubnet"
     },
     "appInsightsName": {
-        "value": "gtpgenaidevgrpain"
-    },    
+      "value": "ieaiscraperdevgrpain"
+    },
     "SUBSCRIPTION_ID": {
-    "value": "250f62f2-46bc-4a3d-b362-d04ec87c9285"
+      "value": "5a20ed48-1f23-4e2e-b9c5-02733c03a911"
     },
     "aisearchname": {
-    "value": "gtptchconaisearch"
+      "value": "fulcrum-competitors-ai-search"
     },
     "aisearchlocation": {
-    "value": "westeurope"
+      "value": "southcentralus"
     },
     "enabledForTemplateDeployment": {
       "value": true
@@ -34,7 +33,7 @@
       "value": true
     },
     "enablePurgeProtection": {
-      "value": false
+      "value": "[if(equals(parameters('DeployPurgeProtection'), 'True'), true(), false())]"
     },
     "softDeleteRetentionInDays": {
       "value": 90
@@ -46,189 +45,185 @@
       "value": true
     },
     "publicNetworkAccessForIngestion": {
-        "value": "Enabled"
-      },
-      "publicNetworkAccessForQuery": {
-        "value": "Enabled"
-      },
-      "log_sku_name": {
-        "value": "PerGB2018"
-      },
-      "enableDataExport": {
-        "value": true
-      },
-      "enableLogAccessUsingOnlyResourcePermissions": {
-        "value": false
-      },
-      "immediatePurgeDataOn30Days": {
-        "value": false
-      },
-      "dailyQuotaGb": {
-        "value": -1
-      },
-      "keyVaultName": {
-        "value": "gtpgenaitchckv"
-      },
-      "secrets": {
-        "value": [
-          {
-            "name": "landing-storage-account",
-            "value": "https://<landing-storage-account-name>.blob.core.windows.net/"
-          },
-          {
-            "name": "ai-language-endpoint",
-            "value": "https://<ai-language-endpoint>.cognitiveservices.azure.com/"
-          },
-          {
-            "name": "ai-search-endpoint",
-            "value": "https://<ai-search-endpoint>.search.windows.net"
-          },
-          {
-            "name": "document-intelligence-endpoint",
-            "value": "https://<document-intelligence-endpoint>.cognitiveservices.azure.com/"
-          },
-          {
-            "name": "openai-endpoint",
-            "value": "https://<openai-endpoint>.openai.azure.com/"
-          },
-          {
-            "name": "sql-server-name",
-            "value": "<sql-server-name>"
-          },
-          {
-            "name": "sql-database-name",
-            "value": "<sql-database-name>"
-          },
-          {
-            "name": "unit-test",
-            "value": "unit-test-secret"
-          },
-          {
-            "name": "function-app-url",
-            "value": "https://<function-app-url>.azurewebsites.net"
-          },
-          {
-            "name": "function-app-key",
-            "value": "<function-app-key>"
-          },
-          {
-            "name": "app-insights-instkey",
-            "value": "<application insights instrumentation key>"
-          }
-        ]
-      },
-      "appserviceplan_sku": {
-        "value": "ElasticPremium"
+      "value": "Enabled"
+    },
+    "publicNetworkAccessForQuery": {
+      "value": "Enabled"
+    },
+    "log_sku_name": {
+      "value": "PerGB2018"
+    },
+    "enableDataExport": {
+      "value": true
+    },
+    "enableLogAccessUsingOnlyResourcePermissions": {
+      "value": false
+    },
+    "immediatePurgeDataOn30Days": {
+      "value": false
+    },
+    "dailyQuotaGb": {
+      "value": -1
+    },
+    "keyVaultName": {
+      "value": "ieaiscrapertchckvns"
+    },
+    "secrets": {
+      "value": [
+        {
+          "name": "landing-storage-account",
+          "value": "https://<landing-storage-account-name>.blob.core.windows.net/"
+        },
+        {
+          "name": "ai-language-endpoint",
+          "value": "https://<ai-language-endpoint>.cognitiveservices.azure.com/"
+        },
+        {
+          "name": "ai-search-endpoint",
+          "value": "https://<ai-search-endpoint>.search.windows.net"
+        },
+        {
+          "name": "document-intelligence-endpoint",
+          "value": "https://<document-intelligence-endpoint>.cognitiveservices.azure.com/"
+        },
+        {
+          "name": "openai-endpoint",
+          "value": "https://<openai-endpoint>.openai.azure.com/"
+        },
+        {
+          "name": "sql-server-name",
+          "value": "<sql-server-name>"
+        },
+        {
+          "name": "sql-database-name",
+          "value": "<sql-database-name>"
+        },
+        {
+          "name": "unit-test",
+          "value": "unit-test-secret"
+        },
+        {
+          "name": "function-app-url",
+          "value": "https://<function-app-url>.azurewebsites.net"
+        },
+        {
+          "name": "function-app-key",
+          "value": "<function-app-key>"
+        },
+        {
+          "name": "app-insights-instkey",
+          "value": "<application insights instrumentation key>"
+        }
+      ]
+    },
+    "appserviceplan_sku": {
+      "value": "ElasticPremium"
     },
     "appserviceplan_skuCode": {
-        "value": "EP1"
+      "value": "EP1"
     },
     "reserved": {
-        "value": true
+      "value": true
     },
     "maximumElasticWorkerCount": {
-        "value": 1
+      "value": 1
     },
     "storageAccountType": {
-        "value": "Standard_ZRS"
-      },
-      "accessTier": {
-        "value": "Hot"
-      },
-      "isHnsEnabled": {
-        "value": false
-      },
-      "requireInfrastructureEncryption": {
-        "value": true
-      },
-      "softDeleteEnabled": {
-        "value": false
-      },
-      "deployblobPE": {
-        "value": true
-      },
-      "deploydfsPE": {
-        "value": false
-      },
-      "deployfilePE": {
-        "value": true
-      },
-      "deployqueuePE": {
-        "value": true
-      },
-      "deploytablePE": {
-        "value": true
-      },
-      "retentionInDays": {
-        "value": 90
-      },
+      "value": "Standard_ZRS"
+    },
+    "accessTier": {
+      "value": "Hot"
+    },
+    "isHnsEnabled": {
+      "value": false
+    },
+    "requireInfrastructureEncryption": {
+      "value": true
+    },
+    "softDeleteEnabled": {
+      "value": null
+    },
+    "deployblobPE": {
+      "value": true
+    },
+    "deploydfsPE": {
+      "value": false
+    },
+    "deployfilePE": {
+      "value": true
+    },
+    "deployqueuePE": {
+      "value": true
+    },
+    "deploytablePE": {
+      "value": true
+    },
+    "retentionInDays": {
+      "value": 90
+    },
     "sku_name": {
-        "value": "standard"
-      
+      "value": "standard"
     },
     "disableLocalAuth": {
-        "value": false
+      "value": true
     },
     "partitionCount": {
-        "value": 1
+      "value": 1
     },
     "replicaCount": {
-        "value": 1
+      "value": 1
     },
     "hostingMode": {
-        "value": "default"
+      "value": "default"
     },
     "semanticSearch": {
-        "value": "standard"
+      "value": "standard"
     },
-
     "tags": {
       "value": {
-          "infra": "techcon"
+        "Environment": "dev",
+        "Customer": "IE",
+        "Project": "Web Scraped Index"
       }
-  },
-      "deployments": {
-        "value": []
-      },
-    "appServicePlanName":{
-        "value": "gtpgenaidevdefnp"
+    },
+    "deployments": {
+      "value": []
+    },
+    "appServicePlanName": {
+      "value": "ieaiscraperdevdefnp"
     },
     "storageAccountName": {
-        "value": "gtpgenaitchconstor"
+      "value": "ieaiscrapertchconstor"
     },
-    "containerName":{
-      "value": "gtpgenaistortechcont"
+    "containerName": {
+      "value": "ieaiscraperstortechcont"
     },
     "dockerRegistryUrl": {
-    "value": "gtpgenaicontainer.azurecr.io"
+      "value": "gtpgenaicontainer.azurecr.io"
     },
     "dockerRegistryUsername": {
-    "value": "gtpgenaidevdecon"
+      "value": "gtpgenaidevdecon"
     },
     "vnetName": {
-    "value": "Techconnectvnet"
+      "value": "ieaiscrapervnet"
     },
     "vnetAddressSpace": {
-    "value": "10.240.4.0/23"
+      "value": "10.240.4.0/23"
     },
-    "VnetForResourcesRgName":{
-    "value": "Techconnect"
+    "VnetForResourcesRgName": {
+      "value": "Techconnect"
     },
     "azurePAASResourcesSubnetAddressSpace": {
-    "value": "10.240.4.240/28"
+      "value": "10.240.4.240/28"
     },
     "logAnalyticsSubscriptionId": {
-    "value": "250f62f2-46bc-4a3d-b362-d04ec87c9285"
+      "value": "250f62f2-46bc-4a3d-b362-d04ec87c9285"
     },
     "logAnalyticsRG": {
-    "value": "Techconnect"
+      "value": "Techconnect"
     },
     "logAnalyticsName": {
-    "value": "gtpgenailogtechcon"
-    } 
-
-
-    
-  
-}
+      "value": "ieaiscraperlogtechcon"
+    }
+  }
 }

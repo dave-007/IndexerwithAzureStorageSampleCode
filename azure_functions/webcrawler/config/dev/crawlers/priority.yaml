@@ -1,7 +1,7 @@
 crawler:
   documents:
     storage:
-      account: https://[].blob.core.windows.net/
+      account: https://ieaiscrapertchconstor.blob.core.windows.net/
       container: container
     urls:
       - https://www.google.come/  
@@ -143,5 +143,5 @@ crawler:
         - "#About-brand"
   logs:
     storage:
-      account: https://[].blob.core.windows.net/
+      account: https://ieaiscrapertchconstor.blob.core.windows.net/
       container: containerlogs

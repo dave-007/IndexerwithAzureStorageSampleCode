@@ -1,0 +1,220 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "rgname": {
+      "value": "ie-ai-index-scraper2-southcentral-rg"
+    },
+    "location": {
+      "value": "southcentralus"
+    },
+    "tags": {
+      "value": {
+        "Environment": "dev",
+        "Customer": "IE",
+        "Project": "Web Scraped Index"
+      }
+    },
+    "aisearchname": {
+      "value": "fulcrum-competitors-ai-search"
+    },
+    "aisearchlocation": {
+      "value": "southcentralus"
+    },
+    "sku_name": {
+      "value": "standard"
+    },
+    "disableLocalAuth": {
+      "value": true
+    },
+    "partitionCount": {
+      "value": 1
+    },
+    "replicaCount": {
+      "value": 1
+    },
+    "hostingMode": {
+      "value": "default"
+    },
+    "semanticSearch": {
+      "value": "standard"
+    },
+    "aiservicename": {
+      "value": "ieaiscraperopenai"
+    },
+    "deployments": {
+      "value": []
+    },
+    "appInsightsName": {
+      "value": "ieaiscraperdevgrpain"
+    },
+    "SUBSCRIPTION_ID": {
+      "value": "5a20ed48-1f23-4e2e-b9c5-02733c03a911"
+    },
+    "vnetName": {
+      "value": "ieaiscrapervnet"
+    },
+    "PrivateEndpointSubnetName": {
+      "value": "Devsubnet"
+    },
+    "PrivateEndpointId": {
+      "value": "Devsubnet"
+    },
+    "DeployResourcesWithPublicAccess": {
+      "value": "True"
+    },
+    "DeployWithCustomNetworking": {
+      "value": "True"
+    },
+    "CreatePrivateEndpoints": {
+      "value": "True"
+    },
+    "CreatePrivateEndpointsInSameRgAsResource": {
+      "value": "False"
+    },
+    "UseManualPrivateLinkServiceConnections": {
+      "value": "False"
+    },
+    "appServicePlanName": {
+      "value": "ieaiscraperdevdefnp"
+    },
+    "appserviceplan_sku": {
+      "value": "ElasticPremium"
+    },
+    "appserviceplan_skuCode": {
+      "value": "EP1"
+    },
+    "reserved": {
+      "value": true
+    },
+    "maximumElasticWorkerCount": {
+      "value": 1
+    },
+    "functionWorkerRuntime": {
+      "value": "python"
+    },
+    "functionAppName": {
+      "value": "ieaiscrapertcdefnans"
+    },
+    "hostingPlanName": {
+      "value": "ieaiscraperdevdefnp"
+    },
+    "storageAccountName": {
+      "value": "ieaiscrapertchconstor"
+    },
+    "functionApplinuxFxVersion": {
+      "value": "python|3.11"
+    },
+    "vnetAddressSpace": {
+      "value": "10.240.4.0/23"
+    },
+    "FunctionAppSubnetName": {
+      "value": "FunctionAppSubnet"
+    },
+    "apiManagementSubnetName": {
+      "value": "ApiManagementSubnet"
+    },
+    "azurePAASResourcesSubnetAddressSpace": {
+      "value": "10.240.4.240/28"
+    },
+    "logicAppSubnetAddressSpace": {
+      "value": "10.240.4.192/28"
+    },
+    "functionAppSubnetAddressSpace": {
+      "value": "10.240.4.176/28"
+    },
+    "apiManagementSubnetAddressSpace": {
+      "value": "10.240.4.144/28"
+    },
+    "DeployDataLake": {
+      "value": "True"
+    },
+    "DeployLandingStorage": {
+      "value": "True"
+    },
+    "DeployKeyVault": {
+      "value": "True"
+    },
+    "DeployMLWorkspace": {
+      "value": "True"
+    },
+    "DeployCognitiveService": {
+      "value": "True"
+    },
+    "DeployAzureSearch": {
+      "value": "True"
+    },
+    "DeployAPIManagement": {
+      "value": "True"
+    },
+    "DeployAzureOpenAI": {
+      "value": "True"
+    },
+    "sku": {
+      "value": "standard"
+    },
+    "keyVaultName": {
+      "value": "ieaiscrapertchckvns"
+    },
+    "enabledForTemplateDeployment": {
+      "value": true
+    },
+    "enabledForDiskEncryption": {
+      "value": true
+    },
+    "enabledForDeployment": {
+      "value": true
+    },
+    "softDeleteRetentionInDays": {
+      "value": 90
+    },
+    "DeployPurgeProtection": {
+      "value": "False"
+    },
+    "enablePurgeProtection": {
+      "value": "[if(equals(parameters('DeployPurgeProtection'), 'True'), true(), false())]"
+    },
+    "DeployLogAnalytics": {
+      "value": "True"
+    },
+    "logAnalyticsName": {
+      "value": "ieaiscraperlogtechcon"
+    },
+    "publicNetworkAccessForIngestion": {
+      "value": "Enabled"
+    },
+    "publicNetworkAccessForQuery": {
+      "value": "Enabled"
+    },
+    "log_sku_name": {
+      "value": "PerGB2018"
+    },
+    "retentionInDays": {
+      "value": 90
+    },
+    "dailyQuotaGb": {
+      "value": -1
+    },
+    "enableDataExport": {
+      "value": true
+    },
+    "storageAccountType": {
+      "value": "Standard_ZRS"
+    },
+    "accessTier": {
+      "value": "Hot"
+    },
+    "containerName": {
+      "value": "ieaiscraperstortechcont"
+    },
+    "requireInfrastructureEncryption": {
+      "value": true
+    },
+    "softDeleteEnabled": {
+      "value": null
+    },
+    "enableDiagnostics": {
+      "value": true
+    }
+  }
+}
